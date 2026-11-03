@@ -10,4 +10,4 @@ Abre `index.html` en un navegador. El sitio usa HTML y CSS, sin dependencias ni 
 
 En el repositorio, abre **Settings → Pages**, elige **Deploy from a branch**, selecciona la rama que quieras publicar y la carpeta **/(root)**. GitHub Pages servirá `index.html` como página de inicio.
 
-Las fotografías y las tipografías se cargan desde Unsplash y Google Fonts; el resto del sitio es estático y no requiere servicios externos.
+El logo se sirve localmente desde `assets/`. Las fotografías y las tipografías se cargan desde Unsplash y Google Fonts; el resto del sitio es estático y no requiere servicios externos.

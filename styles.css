@@ -1,13 +1,15 @@
 :root {
   color-scheme: dark;
-  --ink: #111210;
-  --panel: #1b1d1a;
-  --panel-light: #242622;
-  --muted: #a6a99f;
-  --paper: #f0f0e9;
-  --lime: #efff3e;
-  --purple: #9253ff;
-  --line: rgba(240, 240, 233, 0.13);
+  --ink: #100d13;
+  --panel: #1b161f;
+  --panel-light: #28212d;
+  --muted: #aaa1ad;
+  --paper: #f5f0f5;
+  --lime: #ffe33d;
+  --orange: #ff9417;
+  --purple: #7200ad;
+  --magenta: #b500aa;
+  --line: rgba(245, 240, 245, 0.13);
   --body-font: "DM Sans", Arial, sans-serif;
   --display-font: "Barlow Condensed", "Arial Narrow", sans-serif;
 }
@@ -35,6 +37,7 @@ body::before {
   z-index: -1;
   inset: 0;
   background:
+    radial-gradient(ellipse at 50% 40%, rgba(114, 0, 173, 0.08), transparent 68%),
     linear-gradient(30deg, transparent 49.5%, rgba(255, 255, 255, 0.025) 50%, transparent 50.5%) 0 0 / 72px 124px,
     linear-gradient(150deg, transparent 49.5%, rgba(255, 255, 255, 0.025) 50%, transparent 50.5%) 0 0 / 72px 124px,
     linear-gradient(90deg, transparent 49.5%, rgba(255, 255, 255, 0.018) 50%, transparent 50.5%) 0 0 / 72px 124px;
@@ -45,6 +48,11 @@ body::before {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+a:focus-visible {
+  outline: 2px solid var(--magenta);
+  outline-offset: 4px;
 }
 
 img {
@@ -71,21 +79,15 @@ img {
 .brand {
   display: inline-flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
 }
 
-.brand-mark {
-  display: grid;
-  width: 43px;
-  height: 43px;
-  place-items: center;
-  border: 1px solid var(--lime);
-  color: var(--lime);
-  font-family: var(--display-font);
-  font-size: 20px;
-  font-weight: 700;
-  letter-spacing: -0.07em;
-  transform: skew(-7deg);
+.brand-logo {
+  width: 58px;
+  height: 58px;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
 .brand-name {
@@ -132,8 +134,14 @@ img {
 
 .nav-cta {
   padding: 11px 16px;
-  border: 1px solid rgba(239, 255, 62, 0.6);
+  border: 1px solid rgba(255, 227, 61, 0.66);
   color: var(--lime);
+  transition: background 160ms ease, color 160ms ease;
+}
+
+.nav-cta:hover {
+  background: var(--purple);
+  color: var(--paper);
 }
 
 .nav-cta span {
@@ -253,12 +261,12 @@ h2 span {
 }
 
 .button-lime {
-  background: var(--lime);
+  background: linear-gradient(110deg, var(--lime), var(--orange));
   color: var(--ink);
 }
 
 .button-lime:hover {
-  background: #f5ff81;
+  background: linear-gradient(110deg, #fff075, #ffae45);
 }
 
 .text-link {
@@ -409,18 +417,18 @@ h2 span {
   flex-direction: column;
   padding: 27px 24px 23px;
   border: 1px solid var(--line);
-  background: linear-gradient(150deg, rgba(35, 38, 32, 0.98), rgba(22, 23, 21, 0.98));
+  background: linear-gradient(150deg, #281f2d, #1b161f);
   transition: border-color 180ms ease, transform 180ms ease;
 }
 
 .price-card:hover {
-  border-color: rgba(239, 255, 62, 0.72);
+  border-color: rgba(255, 227, 61, 0.72);
   transform: translateY(-3px);
 }
 
 .price-card.featured {
-  border-color: rgba(239, 255, 62, 0.75);
-  background: linear-gradient(145deg, rgba(43, 52, 23, 0.96), rgba(24, 27, 21, 0.98) 63%);
+  border-color: var(--line);
+  background: linear-gradient(150deg, #281f2d, #1b161f);
 }
 
 .card-tag {
@@ -547,7 +555,7 @@ h2 span {
 
 .comparison-section {
   padding: 80px 0 86px;
-  background: #191b18;
+  background: #1c1422;
 }
 
 .comparison-title {
@@ -592,7 +600,7 @@ td {
 }
 
 thead th {
-  background: #22241f;
+  background: linear-gradient(100deg, #390956, #28142f);
   color: var(--lime);
   font-family: var(--display-font);
   font-size: 18px;
@@ -681,7 +689,7 @@ tbody td {
   position: relative;
   min-height: 560px;
   overflow: hidden;
-  border: 1px solid rgba(239, 255, 62, 0.42);
+  border: 1px solid rgba(255, 227, 61, 0.42);
 }
 
 .method-image::after {
@@ -722,7 +730,7 @@ tbody td {
 }
 
 .philosophy-section {
-  background: #20221f;
+  background: #1c1820;
 }
 
 .philosophy-grid {
@@ -834,8 +842,8 @@ tbody td {
   position: relative;
   overflow: hidden;
   background:
-    radial-gradient(ellipse at 70% 50%, rgba(57, 59, 52, 0.54), transparent 49%),
-    #141513;
+    radial-gradient(ellipse at 70% 50%, rgba(114, 0, 173, 0.22), transparent 49%),
+    #141116;
 }
 
 .commitment-section::before {
@@ -921,7 +929,7 @@ tbody td {
   position: relative;
   min-height: 620px;
   overflow: hidden;
-  background: #1a1b19;
+  background: #1a141e;
 }
 
 .why-backdrop {
@@ -980,7 +988,7 @@ tbody td {
   gap: 20px;
   padding: 22px clamp(24px, 6vw, 88px);
   border-top: 1px solid var(--line);
-  background: #111210;
+  background: #100d13;
 }
 
 .site-footer p {
@@ -997,6 +1005,12 @@ tbody td {
   font-size: 10px;
   font-weight: 700;
   transition: color 160ms ease;
+}
+
+.text-link:hover,
+.card-link:hover,
+.back-top:hover {
+  color: var(--magenta);
 }
 
 @media (max-width: 900px) {
@@ -1060,10 +1074,9 @@ tbody td {
     padding: 13px 20px 10px;
   }
 
-  .brand-mark {
-    width: 36px;
-    height: 36px;
-    font-size: 17px;
+  .brand-logo {
+    width: 44px;
+    height: 44px;
   }
 
   .brand-name {
